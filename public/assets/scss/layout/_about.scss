@@ -1,0 +1,258 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  07. ABOUT CSS START
+/*----------------------------------------*/
+
+.about {
+    &__img {
+        position: relative;
+        @media #{$lg,$md} {
+            text-align: center;
+        }
+        & img {
+            border-radius: 0 0 362px 341px;
+            max-width: 100%;
+        }
+    }
+    &__img-shape-text {
+
+        background: var(--tp-icon-green);
+        border-radius: 50%;
+    }
+    &__exprience {
+        position: absolute;
+        bottom: -135px;
+        left: 120px;
+        height: 326px;
+        width: 326px;
+        background: var(--tp-icon-green);
+        border-radius: 50%;
+        padding: 65px 30px;
+        text-align: center;
+        @include transition(.3s);
+        @media #{$lg,$md,$xs} {
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+        @media #{$xs} {
+            height:200px;
+            width: 200px;
+            padding: 30px;
+        }
+        & h3{
+            font-size: 115px;
+            color: var(--tp-common-white);
+            font-family: days one;
+            line-height: 1;
+            @media #{$xs} {
+                font-size: 80px;
+            }
+        }
+        & i {
+            display: inline-block;
+            font-size: 24px;
+            color: var(--tp-common-white);
+            font-weight: 600;  
+            font-style: normal;
+            line-height: 1.3; 
+            text-align: left; 
+            @media #{$xs} {
+                font-size: 16px;
+            }        
+        }
+    }
+}
+.tp-about {
+    &__info-list {
+        & ul {
+            & li {
+                font-size: 15px;
+                font-weight: 500;
+                position: relative;
+                padding-left: 34px;
+                display: flex;
+                align-items: center;
+                margin-bottom: 8px;
+                & i {
+                    font-size: 20px;
+                    color: var(--tp-icon-green);
+                    position: absolute;
+                    display: inline-block;
+                    left: 0;
+                }
+            }
+        }
+    }
+    &__content {
+        @media #{$lg,$md,$xs} {
+            margin-left: 0;
+        }
+    }
+}
+.about-thumb-shape {
+	position: absolute;
+	bottom: 0;
+	left: -170px;
+    @media #{$xxl,$xl} {
+        left: -100px;
+    }
+    @media #{$lg} {
+        left: 0px;
+    }
+    @media #{$md} {
+        left: -120px;
+    }
+}
+.about-video {
+	position: absolute;
+	top: 230px;
+	left: 200px;
+    @media #{$lg} {
+        left: 360px;
+    }
+    @media #{$xs} {
+        left: 0px;
+    }
+    & i {
+        height: 100px;
+        width: 100px;
+        line-height: 100px;
+        text-align: center;
+        background: var(--tp-icon-green);
+        border-radius: 50px;
+        color: var(--tp-common-white);
+        animation: tp-pulse 2s infinite;
+        &:hover {
+            background-color: var(--tp-theme-blue);
+        }
+    }
+}
+.about-content {
+    @media #{$md,$xs} {
+        margin-left: 0;
+    }
+}
+.about-thumb {
+    @media #{$xs} {
+        margin-left: 0;
+    }
+    & img {
+        @media #{$xs} {
+            max-width: 100%;
+        }
+    }
+}
+.tp-box-space {
+    @media #{$xs} {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+.ab-title {
+    font-size: 36px;
+    font-weight: 400;
+    @media #{$xs} {
+        font-size: 30px;
+    }
+}
+.about-align{
+    padding-left: 80px;
+    @media #{$md,$xs,$xl} {
+        padding-left: 0;
+    }
+}
+.ab-check-list {
+    & ul {
+        & li {
+            & i {
+                color: var(--tp-theme-blue);
+            }
+        }
+    }
+}
+.tp-ab-main-img {
+	margin-right: 15px;
+    @media #{$xs} {
+        margin-right: 0;
+    }
+    & img {
+        border-radius: 5px;
+        @media #{$xl,$lg,$xs} {
+            max-width: 100%;
+        }
+    }
+}
+.tp-ab-shape {
+    & img {
+        border-radius: 5px;
+        @media #{$xl} {
+            max-width: 100%;
+        }
+    }
+    & .ab-shape-one{
+        margin-bottom: 15px;
+    }
+}
+.tp-ab-counter {
+	border-radius: 5px;
+	width: 236px;
+	height: 258px;
+	padding: 31px 15px 15px 15px;
+    left: 50px;
+    bottom: 7px;
+    @media #{$xl} {
+        left: 0;
+        bottom: 0;
+    }
+    @media #{$lg} {
+        left: 90px;
+        bottom: -125px;
+    }
+    @media #{$xs} {
+        width: 170px;
+        height: 190px;
+        left: 85px;
+        bottom: -35px;
+    }
+}
+.tp-ab-img {
+    @media #{$xs} {
+        justify-content: center;
+    }
+}
+.about-title {
+    font-size: 36px;
+    text-transform: capitalize;
+    @media #{$xl,$lg,$xs} {
+        font-size: 30px;
+    }
+    & br {
+        @media #{$xl,$lg,$xs} {
+            display: none;
+        }
+    }
+}
+.ab-count{
+    left: -110px;
+    bottom: 35px;
+    @media #{$lg,$xl} {
+        left: 0;
+        bottom: 0;
+    }
+    @media #{$md,$xs} {
+        left: 0;
+        bottom: -80px;
+    }
+}    
+.tp-3-thumb {
+    display: flex;
+    justify-content: end;
+    @media #{$md} {
+        justify-content: center;
+    }
+}
+.tp-ab-sm-title {
+    font-size: 36px;
+}

@@ -1,0 +1,216 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  05. SLIDER CSS START
+/*----------------------------------------*/
+
+.slider-content {
+    margin-left: -115px;
+    @media #{$xxl,$xl,$lg,$md,$xs} {
+        margin-left: 0;
+    }
+    @media #{$md,$xs} {
+        margin-left: 0;
+        padding-top: 0;
+    }
+    &__title {
+        font-size: 57px;
+        @media #{$lg} {
+            font-size: 44px;
+        }
+        @media #{$md} {
+            font-size: 44px;
+            margin-bottom: 15px;
+        }
+        @media #{$xs} {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+    }
+    & p {
+        font-size: 18px;
+        color: var(--tp-text-body);
+        margin-bottom: 53px;
+        font-weight: 500;
+        @media #{$md,$xs} {
+            margin-bottom: 20px;
+        }
+        & br {
+            @media #{$lg,$xs} {
+               display: none; 
+            }
+        }
+    }
+    &__social {
+        margin-left: -115px;
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            margin-left: 0;
+        }
+        @media #{$md,$xs} {
+            margin-top: 30px;
+            margin-left: 0;
+        }
+        & a {
+            font-weight: 400;
+            font-size: 16px;
+            color: var(--tp-text-3);
+            text-transform: uppercase;
+            margin-right: 55px;
+            @media #{$lg} {
+                margin-right: 30px;
+            }
+            & i {
+                margin-right: 15px;
+            }
+        }
+        & .facebook-2 {
+            &:hover {
+                color: var(--tp-icon-fb);
+            }
+        }
+        & .youtub-2 {
+            &:hover {
+                color: var(--tp-icon-red);
+            }
+        }
+        & .twitter-2 {
+            &:hover {
+                color: var(--tp-icon-tweet);
+            }
+        }
+    }
+    &__shape {
+        position: absolute;
+        right: 35px;
+        top: 195px;
+        @media #{$xl} {
+            right: 380px;
+            top: 0;
+        }
+        @media #{$lg} {
+            right: 15px;
+            top: 0;
+        }
+        @media #{$md} {
+            right: 200px;
+            top: 55px;
+        }
+    }
+    &__arrow {
+        position: absolute;
+        right: 170px;
+        bottom: -10px;
+        @media #{$xl} {
+            right: 80px;
+        }
+        @media #{$md} {
+            right: 30px;
+            bottom: 0px;
+        }
+        @media #{$xs} {
+            right: 50%;
+            transform: translateX(50%);
+        }
+        & .slider-p {
+            margin-right: 20px;
+        }
+        & i {
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid var(--tp-border-secondary);
+            &:hover {
+                background-color: var(--tp-theme-primary);
+                color: var(--tp-common-white);
+                border: 1px solid var(--tp-theme-primary);
+            }
+        }
+    }
+}
+.tp-slider .swiper-slide-active{
+    & .slider-content__title,
+    & p,
+    & .slider-content__btn{
+        animation-fill-mode: both;
+        animation-name: fadeInUp;
+    }
+}
+.tp-slider .swiper-slide-active .slider-content__title {
+    animation-delay: 0.3s;
+    animation-duration: 0.3s;
+}
+.slider-content  {
+    &__title {
+        & br {
+            @media #{$md,$xs} {
+                display: none;
+            }
+        }
+    }
+}
+.tp-slider .swiper-slide-active p {
+    animation-delay: 0.5s;
+    animation-duration: 0.5s;
+}
+.tp-slider .swiper-slide-active .slider-content__btn  {
+    animation-delay: 0.7s;
+    animation-duration: 0.7s;
+}
+.tp-slider .swiper-slide-active{
+    & .slider-content__bg,
+    & .slider-content__shape{
+        animation-fill-mode: both;
+        animation-name: fadeInRight;
+    }
+}
+.slider-content__shape {
+    & img {
+        @media #{$md,$xs} {
+            width: 200px;
+        }
+    }
+}
+.tp-slider .swiper-slide-active .slider-content__bg {
+    animation-delay: 0.8s;
+    animation-duration: 0.8s;
+}
+.tp-slider .swiper-slide-active .slider-content__shape  {
+    animation-delay: 0.6s;
+    animation-duration: 0.6s;
+}
+.slider-content__bg {
+    & img {
+        max-width: 100%;
+        @media #{$md} {
+            width: 290px;
+        }
+        @media #{$xs,$md} {
+            margin-bottom: 40px;
+        }
+    }
+}
+.slider-content__btn {
+    @media #{$md,$xs} {
+        margin-bottom: 30px;
+    }
+}
+.slider-tp-top {
+    height: 870px;
+    @media #{$md,$xs} {
+        height: 780px;
+        padding-top: 50px;
+    }
+}
+.slider-social {
+	position: absolute;
+	bottom: 97px;
+	left: 0;
+	right: 0;
+	z-index: 9;
+    @media #{$md,$xs} {
+        bottom: 50px;
+    }
+}

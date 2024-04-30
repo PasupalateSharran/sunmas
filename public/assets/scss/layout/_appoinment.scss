@@ -1,0 +1,178 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  11. APPOINMENT CSS START
+/*----------------------------------------*/
+
+.visitor-info {
+    padding:130px 110px;
+    @media #{$xxxl} {
+        padding: 130px 80px;
+    }
+    @media #{$xxl} {
+        padding: 130px 40px;
+    }
+    @media #{$xl,$md} {
+        padding:130px 50px;
+    }
+    @media #{$xs} {
+        padding:130px 15px;
+    }
+}
+.appoinment-title {
+    & i {
+        color: var(--tp-icon-blue);
+        margin-right: 15px;
+    }
+}
+.visitor-form {
+    &__input {
+        & input {
+            width: 100%;
+            height: 60px;
+            border: 1px solid #EFF1F6;
+            border-radius: 5px;
+            margin-bottom: 25px;
+            padding: 0 20px;
+            &::placeholder {
+                font-size: 15px;
+                color: #B2B0C1;
+            }
+            &:hover {
+                border:1px solid var(--tp-icon-green);
+            }
+        }
+        & textarea {
+            width: 100%;
+            height: 170px;
+            border: 1px solid #EFF1F6;
+            padding-top: 25px;
+            padding-left: 20px;
+            border-radius: 5px;
+            &::placeholder {
+                color: #B2B0C1;
+            }
+            &:focus {
+                border-color: var(--tp-icon-green);
+                outline: none;
+            }
+        }
+    }
+} 
+.visit-serial {
+    text-align: end;
+    @media #{$xs} {
+        text-align: start;
+    }
+    & span {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--tp-text-2);
+        @media #{$xs} {
+            font-size: 15px;
+        }
+        & a {
+            text-decoration: underline;
+            color: var(--tp-icon-blue);
+            &:hover {
+                color: var(--tp-icon-green);
+                & i {
+                    animation: tfLeftToRight 0.5s forwards;
+                }
+            }
+            & i {
+                margin-left: 5px;
+            }
+        }
+
+    }
+}
+.appoinment-thumb {
+    height: 100%;
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.appoint-thumb {
+    & img {
+        width: inherit;
+        @media #{$lg,$md,$xs} {
+            width: 100%;
+        }
+    }
+}
+.visitor-info-bg {
+    background-color: var(--tp-common-white);
+    padding: 42px 62px 0px 62px;
+    margin-bottom: -90px;
+    @media #{$md} {
+        padding: 42px 30px 0px 30px;
+    }
+    @media #{$xs} {
+        padding: 42px 15px 0px 15px;
+    }
+}
+
+// support-area
+.tp-support-form {
+    background-color: var(--tp-common-white);
+    padding: 75px 90px 85px 90px;
+    margin: 0 25px;
+    border-bottom: 4px solid var(--tp-theme-blue) ;
+    @media #{$xs} {
+        margin: 0;
+        padding: 50px 10px 50px 10px;
+    }
+    & span {
+        font-weight: 500;
+        font-size: 24px;
+        text-align: left;
+        display: block;
+        margin-bottom: 50px;
+    }
+    & form {
+        margin-bottom: 12px;
+        & input {
+            width: 100%;
+            height: 60px;
+            padding: 0 20px;
+            border-radius: 5px;
+            margin-bottom: 25px;
+            border: 1px solid #EFF1F6;
+            box-shadow: 0px 16px 24px rgba(189, 196, 205, 0.13);
+            &:focus {
+                border:1px solid var(--tp-theme-blue);
+                background-color: #F2F5FA;
+                &::placeholder {
+                    color: var(--tp-theme-primary);
+                }
+            }
+            &::placeholder {
+                color: #B2B0C1;
+            }
+        }
+        & textarea {
+            width: 100%;
+            height: 172px;
+            padding: 14px 0 0 20px;
+            border-radius: 5px;
+            border: 1px solid #EFF1F6;
+            box-shadow: 0px 16px 24px rgba(189, 196, 205, 0.13);
+            &:focus {
+                border:1px solid var(--tp-theme-blue);
+                background-color: #F2F5FA;
+                &::placeholder {
+                    color: var(--tp-theme-primary);
+                }
+            }
+            &:focus-visible {
+                border: none;
+            }
+            &::placeholder {
+                color: #B2B0C1;
+            }
+        }
+    }
+}

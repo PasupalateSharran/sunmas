@@ -1,0 +1,102 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  08. COUNTER CSS START
+/*----------------------------------------*/
+
+.counter {
+    &__item {
+        border: 1px solid var(--tp-border-primary);
+        padding: 75px 40px 70px 55px;
+        border-radius: 10px;
+        @include transition(.4s);
+        @media #{$bxxxl} {
+            padding: 75px 30px 70px 30px;
+        }
+        @media #{$xxl} {
+            padding: 75px 20px 70px 25px;
+        }
+        @media #{$xl} {
+            padding: 75px 20px 70px 25px;
+        }
+        &:hover {
+            &.counter__item {
+                border: 1px solid var(--tp-icon-blue);
+            }
+            &.blue-border {
+                border: 1px solid var(--tp-icon-blue);
+            }
+            &.pink-border {
+                border: 1px solid var(--tp-icon-pink);
+            }
+            &.sky-border {
+                border: 1px solid var(--tp-icon-sky);
+            }
+            &.green-border {
+                border: 1px solid var(--tp-icon-green);
+            }
+        }
+    }
+    &__icon {
+        & i {
+            clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+            background-color: var(--tp-icon-blue);
+            display: inline-block;
+            height: 20px;
+            width: 18px;
+            transform: translateY(5px);
+            @include transition(.3s);
+            flex: 0 0 auto;
+            margin-right: 10px;
+            animation: firefly 2.5s linear infinite;
+        }
+        &.pink-hard {
+            & i {
+                background-color: var(--tp-icon-pink);
+            }
+        }
+        &.sky-hard {
+            & i {
+                background-color: var(--tp-icon-sky);
+            }
+        }
+        &.green-hard {
+            & i {
+                background-color: var(--tp-icon-green);
+            }
+        }
+    }
+    &__content {
+        & p {
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+    }
+    &__title {
+        font-size: 48px;
+        font-weight: 400;
+    }
+}
+.experience-item {
+    & span {
+        color: #141515;
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
+.tl-progress {
+	height: 200px;
+	width: 200px;
+	background: #fff;
+	text-align: center;
+	line-height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+    margin: auto;
+    margin-bottom: 25px;
+    & input {
+        color: #171151 !important;
+    }
+}

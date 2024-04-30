@@ -1,0 +1,220 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  09. GALLERY CSS START
+/*----------------------------------------*/
+
+.tp-gallery {
+    @media #{$xs} {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    &__item {
+        &:hover {
+            & .tp-gallery__img {
+                &::before {
+                    height: 100%;
+                }
+            }
+            & .tp-gallery__content {
+                bottom: 27px;
+                opacity: 1;
+                visibility: visible;
+            }
+            & .tp-gallery__info {
+                top: 35px;
+                transform: rotateY(180deg);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    &__img {
+        & img {
+            width: 100%;
+        }
+        &::before {
+            @include transition(.4s);
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 0%;
+            background: linear-gradient(179.97deg, rgba(14, 99, 255, 0) 20.71%, #0E63FF 90.16%);
+            left: 0px;
+            right: 0;
+            bottom: 0px;
+            z-index: 1;
+        }
+    }
+    &__info {
+        position: absolute;
+        top: 0px;
+        right: 35px;
+        z-index: 5;
+        opacity: 0;
+        visibility: hidden;
+        @include transition(.4s);
+        a {
+            clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+            background-color: var(--tp-common-white);
+            display: block;
+            height: 75px;
+            width: 65px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 20px;
+            color: var(--tp-common-white);
+            position: relative;
+            &::before {
+                position: absolute;
+                content: "";
+                clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+                background-color: var(--tp-icon-green);
+                display: block;
+                height: 65px;
+                width: 55px;
+                left: 5px;
+                top: 5px;
+                z-index: -1;
+            }
+            &:hover {
+                &::before {
+                    background-color: var(--tp-icon-sky);
+                }
+            }
+        }
+    }
+    &__content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 35px;
+            padding-bottom: 0;
+            z-index: 5;
+            opacity: 0;
+            visibility: hidden;
+            @include transition(.4s);
+        & span {
+            color: var(--tp-common-white);
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 700;
+            & i {
+                margin-right: 5px;
+            }
+            & a {
+                &:hover {
+                    color: var(--tp-icon-green);
+                }
+            }
+        }
+    }
+    &__title {
+        text-transform: uppercase;
+        font-size: 22px;
+        color: var(--tp-common-white);
+        margin-bottom: 5px;
+        @media #{$xxl,$xl} {
+            font-size: 18px;
+        }
+        @media #{$xs} {
+            font-size: 16px;
+        }
+        & a {
+            background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+            display: inline;
+            background-size: 0% 1px, 0 1px;
+            background-position: 100% 100%, 0 100%;
+            background-repeat: no-repeat;
+            transition: background-size 0.4s linear;
+            &:hover {
+                background-size: 0% 1px, 100% 1px;
+            }
+        }
+    }
+}
+.gallery-item-bg {
+	margin-top: -215px;
+}
+.gallery-item {
+    & img {
+        width: 100%;
+    }
+    &:hover {
+        &.gallery-item {
+            &::before {
+                height: 210px;
+                @media #{$lg} {
+                    height: 150px;
+                }
+            }
+        }
+        & .gallery-item__content{
+            opacity: 1;
+            visibility: visible;
+            bottom: 30px;
+            @media #{$lg,$xs} {
+                bottom: 0;
+            }
+        }
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        clip-path: polygon(50% 0%, 100% 60%, 100% 100%, 0 100%, 0 60%);
+        bottom: 0px;
+        left: 0;
+        height: 0px;
+        width: 100%;
+        background-color: var(--tp-icon-green);
+        @media #{$xs} {
+            clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0px 100%, 0 0%);
+        }
+    }
+    &__content {
+        position: absolute;
+        z-index: 2;
+        bottom: -10px;
+        left: 0px;
+        padding:10px 20px;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        @include transition(.3s);
+        & span {
+            color: var(--tp-common-white);
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 700;
+            @include transition(.3s);
+            & i {
+                margin-right: 5px;
+            }
+            &:hover {
+                color: var(--tp-icon-blue);
+            }
+        }
+    }
+    &__title {
+        font-size: 22px;
+        color: var(--tp-common-white);
+        text-transform: uppercase;
+        @media #{$xs} {
+            font-size: 18px;
+        }
+        & a {
+            background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+            display: inline;
+            background-size: 0% 1px, 0 1px;
+            background-position: 100% 100%, 0 100%;
+            background-repeat: no-repeat;
+            transition: background-size 0.4s linear;
+            &:hover {
+                background-size: 0% 1px, 100% 1px;
+            }
+        }
+    }
+}

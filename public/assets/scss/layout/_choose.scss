@@ -1,0 +1,91 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  10. CHOOSE CSS START
+/*----------------------------------------*/
+
+.tp-choose {
+    &__item {
+        @media #{$lg,$md,$xs} {
+            margin-left: 0;
+        }
+        &:hover {
+            & .tp-choose__icon {
+                box-shadow: inset 0 0 0 60px var(--tp-icon-blue);
+                & i {
+                    color: var(--tp-common-white);
+                }
+            }
+            & .pink-icon {
+                box-shadow: inset 0 0 0 60px var(--tp-icon-pink);
+            }
+            & .green-icon {
+                box-shadow: inset 0 0 0 60px var(--tp-icon-green);
+            }
+            & .sky-icon {
+                box-shadow: inset 0 0 0 60px var(--tp-icon-sky);
+            }
+        }
+    }
+    &__icon {
+        height: 115px;
+        width: 115px;
+        text-align: center;
+        line-height: 130px;
+        background-color: rgb(14, 99, 255, .1);
+        border-radius: 50%;
+        @include transition(.4s);
+        & i {
+            color: var(--tp-icon-blue);
+            font-size: 45px;
+        }
+        &.pink-icon {
+            background-color: rgb(247, 42, 117, .1);
+            & i {
+                color: var(--tp-icon-pink);
+            }
+        }
+        &.green-icon {
+            background-color: rgb(16, 208, 161, .1);
+            & i {
+                color: var(--tp-icon-green);
+            }
+        }
+        &.sky-icon {
+            background-color: rgb(66, 191, 255, .1);
+            & i {
+                color: var(--tp-icon-sky);
+            }
+        }
+    }
+    &__content {
+        & p {
+            color: var(--tp-text-1);
+            font-size: 15px;
+        }
+    }
+    &__title {
+        color: var(--tp-common-white);
+        font-weight: 400;
+    }
+}
+.tp-choose-option {
+    & span {
+        font-size: 18px;
+        color: var(--tp-text-1);
+        font-weight:500 ;
+        & a {
+            color: var(--tp-common-white);
+            text-transform: uppercase;
+            & i {
+                margin-left: 5px;
+            }
+            &:hover {
+                color: var(--tp-icon-pink);
+                & i {
+                    animation: tfLeftToRight 0.5s forwards;
+                }
+            }
+        }
+    }
+}

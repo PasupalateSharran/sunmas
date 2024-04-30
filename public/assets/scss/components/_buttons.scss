@@ -1,0 +1,111 @@
+@use '../utils' as *;
+
+.tp-bt-btn {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 20px 42px;
+    border-radius: 5px;
+    background: var(--tp-common-white);
+    &:hover {
+        color: var(--tp-icon-green);
+    }
+    & span {
+        color: var(--tp-text-2);
+        margin-left: 10px;
+        text-transform: uppercase;
+    }
+    @media #{$xxl} {
+        padding: 20px 30px;
+    }
+    @media #{$xl} {
+        padding: 20px 15px;
+    }
+    @media #{$md} {
+        box-shadow: rgba(100, 100, 111, 0.1) 1px 5px 20px 1px;
+        line-height: 1;
+        padding: 16px 25px 12px 25px;
+    }
+}
+.tp-cta-btn {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 19px 46px;
+    border-radius: 5px;
+    background: var(--tp-icon-green);
+    color: var(--tp-common-white);
+    & span {
+        text-transform: uppercase;
+        color: var(--tp-common-white);
+        margin-left: 10px;
+        margin-right: 4px;
+    }
+    &:hover {
+        color: var(--tp-text-body);
+    }
+}
+
+.tp-btn,
+.tp-btn-second {
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+    padding: 25px 45px;
+    background-color: #0E63FF;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: var(--tp-common-white);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    @media #{$md,$xs} {
+        padding: 20px 40px;
+    }
+    &::after {
+        content: "";
+        height: 300px;
+        width: 300px;
+        background-color: #2974FF;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%) scale(0);
+        transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: -1;
+    }
+    &:hover{
+        color:#fff;
+        &::after {
+            transform: translateY(-50%) translateX(-50%) scale(1);
+        }
+    }
+}
+.tp-btn {
+    @media #{$xs} {
+        margin-right: 5px;
+    }
+}
+.tp-btn-second {
+    background: var(--tp-icon-green);
+    @media #{$xs} {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+    &::after {
+        content: "";
+        height: 300px;
+        width: 300px;
+        background-color: #13D9A8;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%) scale(0);
+        transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: -1;
+    }
+}

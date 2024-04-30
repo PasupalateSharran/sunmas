@@ -1,0 +1,142 @@
+@use '../utils' as *;
+
+.navtabs {
+    &__icon {
+        font-size: 100px;
+        color: var(--tp-icon-green);
+        display: inline-block;
+    }
+    &__content {
+        & p {
+            font-size: 16px;
+            color: var(--tp-text-2);
+            @media #{$xl} {
+                font-size: 15px;
+            }
+            & br {
+                @media #{$xl} {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.nav-primary {
+    margin-left: -23px;
+    @media #{$md,$xs} {
+        margin-left: 0;
+    }
+}
+.nav-secondary {
+	margin-left: 30px;
+    @media #{$md,$xs} {
+        margin-left: 0;
+    }
+}
+.nav-tertiary {
+	margin-left: 58px;
+    @media #{$md,$xs} {
+        margin-left: 0;
+    }
+}
+.tp-nav-tavs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #171151;
+    font-weight: 700;
+    font-size: 14px;
+    & li {
+        position: relative;
+        &::before {
+            position: absolute;
+            content: "";
+            height: 40px;
+            width: 1px;
+            background: #DFE3E9;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &:first-child {
+            &::before {
+                display: none;
+            }
+        }
+    }
+    & .nav-link.active {
+        border-bottom: 4px solid var(--tp-icon-green);
+        color: var(--tp-theme-primary);
+        box-shadow: 0px 10px 10px rgba(21, 48, 73, 0.1);
+        background-color: var(--tp-common-white);
+    }
+    & button {
+        padding: 24px 120px;
+        background-color: var(--tp-grey-1);
+        color: var(--tp-text-2);
+        border-bottom: 4px solid var(--tp-grey-1);
+        text-transform: uppercase;
+        letter-spacing: 1.4px;
+        @media #{$lg,$xl} {
+            padding: 24px 80px;
+        }
+        @media #{$md} {
+            padding: 22px 60px;
+        }
+        @media #{$xs} {
+            padding: 12px 20px;
+        }
+        &:hover {
+            color: var(--tp-icon-green);
+        }
+    }
+}
+.nav-info {
+    font-size: 18px;
+    color: var(--tp-text-2);
+    & br {
+        @media #{$xs} {
+           display: none; 
+        }
+    }
+}
+.navtabs__shape {
+	position: absolute;
+	top: 33px;
+	left: 360px;
+    @media #{$xl} {
+        left: 300px;        
+    }
+    @media #{$lg} {
+        left: 230px;        
+    }
+}
+.nabthumb {
+    & img {
+        border-radius: 20px;
+        width: 100%;
+    }
+}
+.nabmission {
+    &__content {
+        @media #{$xl,$lg,$md,$xs} {
+            padding-top: 0;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    & p {
+        @media #{$lg,$xs} {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+    }
+    &__title {
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 1.32;
+        @media #{$lg,$xs} {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+    }
+}

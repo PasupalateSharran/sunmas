@@ -1,0 +1,430 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  12. TEAM CSS START
+/*----------------------------------------*/
+
+.tp-team {
+    &:hover {
+        & .tp-team__thumb {
+            & a {
+                & img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        & .tp-team__title {
+            & a {
+                background-size: 0% 1px, 100% 1px;
+            }
+        }
+    }
+    &__thumb {
+        display: block;
+        border-radius: 5px;
+        & a {
+            & img {
+                width: 100%;
+                @include transition(.8s);
+            }
+        }
+    }
+    &__content {
+        padding: 40px 45px 45px 45px;
+        background-color: var(--tp-common-white);
+        border-radius: 0 0 5px 5px;
+        @media #{$md,$xs} {
+            padding: 30px 25px 35px 25px;
+        }
+        & p {
+            color: var(--tp-text-2);
+            margin-bottom: 30px;
+        }
+    }
+    &__title {
+        @media #{$xl,$md,$xs} {
+            font-size: 20px;
+        }
+        & a {
+            background-image: linear-gradient(#171151, #171151), linear-gradient(#171151, #171151);
+            display: inline;
+            background-size: 0% 1px, 0 1px;
+            background-position: 100% 100%, 0 100%;
+            background-repeat: no-repeat;
+            transition: background-size 0.4s linear;
+        }
+    }
+    &__social {
+        & a {
+            margin-right: 12px;
+            color: var(--tp-icon-blue);
+            @media #{$md} {
+                margin-right: 10px;
+            }
+            & i {
+                display: inline-block;
+                height: 50px;
+                width: 50px;
+                line-height: 50px;
+                text-align: center;
+                border-radius: 50px;
+                border: 1px solid var(--tp-grey-1);
+                @include transition(.2s);
+            }
+            &:hover {
+                & i {
+                    border: 1px solid var(--tp-icon-blue);
+                    background-color: var(--tp-icon-blue);
+                    color: var(--tp-common-white);
+                }
+            }
+        }
+    }
+    &__position {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--tp-icon-blue);
+        text-transform: uppercase;
+        display: block;
+    }
+}
+.tp-youtube,
+.tp-twitter, 
+.tp-fb,
+.tp-skype{
+    & i {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 50px;
+        border: 1px solid var(--tp-grey-1);
+        &:hover {
+            color: var(--tp-common-white);
+        }
+    }
+
+}
+.tp-youtube {
+    & i {
+        color: var(--tp-icon-red);
+    }
+    &:hover {
+        &.tp-youtube i {
+            border: 1px solid var(--tp-icon-red);
+            background-color: var(--tp-icon-red);
+        }
+    }
+}
+.tp-twitter {
+    & i {
+        color: var(--tp-icon-tweet);
+    }
+    &:hover {
+        &.tp-twitter i {
+            border: 1px solid var(--tp-icon-tweet);
+            background-color: var(--tp-icon-tweet);
+        }
+    }
+}
+.tp-fb {
+    & i {
+        color: var(--tp-icon-fb);
+    }
+    &:hover {
+        &.tp-fb i {
+            border: 1px solid var(--tp-icon-fb);
+            background-color: var(--tp-icon-fb);
+        }
+    }
+}
+.tp-skype {
+    & i {
+        color: var(--tp-icon-skype);
+    }
+    &:hover {
+        &.tp-skype i {
+            border: 1px solid var(--tp-icon-skype);
+            background-color: var(--tp-icon-skype);
+        }
+    }
+}
+.tp-team-arrow {
+    justify-content: end;
+    @media #{$xs} {
+        margin-bottom: 30px;
+        justify-content: start;
+    }
+    & .team-p {
+        margin-right: 20px;
+    } 
+    & i {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 50%;
+        border: 1px solid var(--tp-border-secondary);
+        &:hover {
+            background-color: var(--tp-theme-primary);
+            color: var(--tp-common-white);
+            border: 1px solid var(--tp-theme-primary);
+        }
+    }
+}
+.team-item {
+    &:hover {
+        & .team-item__title {
+            & a {
+                background-size: 0% 1px, 100% 1px;
+            }
+        }
+        & .team-item__social-info {
+            & a {
+                // transform: translateX(-10px);
+                opacity: 1;
+                visibility: visible;
+                &:first-child {
+                    transition-delay: 100ms;
+                }
+                &:nth-child(2) {
+                    transition-delay: 180ms;
+                }
+                &:nth-child(3) {
+                    transition-delay: 260ms;
+                }
+                &:last-child {
+                    transition-delay: 320ms;
+                }
+            }
+        }
+    }
+    text-align: center;
+    span {
+        color: var(--tp-theme-blue);
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        display: block;
+    }
+    &__title {
+        & a {
+            background-image: linear-gradient(#171151, #171151), linear-gradient(#171151, #171151);
+            display: inline;
+            background-size: 0% 1px, 0 1px;
+            background-position: 100% 100%, 0 100%;
+            background-repeat: no-repeat;
+            transition: background-size 0.4s linear;
+        }
+    }
+    &__social-info {
+        & a {
+            opacity: 0;
+            visibility: hidden;
+            @include transition(.4s);
+            margin: 0 15px;
+            color: #B2B0C1;
+            font-size: 20px;
+            &:hover {
+                color: var(--tp-theme-primary);
+            }
+        }
+    }
+}
+.team-arrow {
+    & i {
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+        text-align: center;
+        border: 1px solid var(--tp-border-secondary);
+        border-radius: 50%;
+        &:hover {
+            background-color: var(--tp-theme-primary);
+            border:1px solid var(--tp-theme-primary);
+            color: var(--tp-common-white);
+        }
+    }
+    & .team-prv {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -80px;
+        z-index: 2;
+        @media #{$xxl} {
+            left: -40px;
+        }
+        @media #{$xl} {
+            left: -30px;
+        }
+        @media #{$lg,$md} {
+            left: -20px;
+        }
+        @media #{$xs} {
+            left: -5px;
+        }
+    }
+    & .team-nxt {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -80px;
+        z-index: 2;
+        @media #{$xxl} {
+            right: -40px;
+        }
+        @media #{$xl} {
+            right: -30px;
+        }
+        @media #{$lg,$md} {
+            right: -20px;
+        }
+        @media #{$xs} {
+            right: -5px;
+        }
+    }
+}
+.tp-team {
+	border: 1px solid var(--tp-grey-1);
+}
+.tp-team-dtls {
+    &__thumb {
+        & img {
+            @media #{$xl,$lg,$md,$xs} {
+                width: 100%;
+            }
+        }
+    }
+    &__content{
+        padding-left: -15px;
+        @media #{$lg,$md,$xs} {
+            margin-top: 0;
+        }
+        & span {
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: var(--tp-theme-blue);
+            display: inline-block;
+        }
+        & p {
+            margin-bottom: 50px;
+            color: var(--tp-text-2);
+            @media #{$md} {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &__title {
+        font-size: 24px;
+        &:hover {
+            color: var(--tp-theme-secondary);
+        }
+    }
+    &__info {
+        & ul {
+            & li {
+                font-size: 18px;
+                color: #030A39;
+                margin-bottom: 22px;
+                & span {
+                    color: #7A8085;
+                    text-transform: capitalize;
+                    & a {
+                        &:hover {
+                            color: var(--tp-theme-blue);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__social {
+        @media #{$lg,$md,$xs} {
+            margin-top: 0;
+        }
+        @media #{$md,$xs} {
+            text-align: start;
+        }
+        @media #{$xs} {
+            text-align: center;
+        }
+        text-align: end;
+        & a {
+            height: 42px;
+            width: 42px;
+            text-align: center;
+            line-height: 42px;
+            display: inline-block;
+            background: var(--tp-icon-fb);
+            color: var(--tp-common-white);
+            border-radius: 5px;
+            margin-left: 10px;
+            @media #{$lg} {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+.tp-team-dtls__social {
+    & .tp-dtls-insta {
+        background-color: var(--tp-theme-blue);
+    }
+}
+.tp-team-dtls__social {
+    & .tp-dtls-tweet {
+        background-color: var(--tp-icon-tweet);
+    }
+}
+.tp-team-dtls__social {
+    & .tp-dtls-pinter {
+        background-color: var(--tp-icon-red);
+    }
+}
+.tp-team-dtls-text {
+    &__title {
+        font-size: 30px;
+        text-transform: capitalize;
+        @media #{$xs} {
+            font-size: 26px;
+        }
+    }
+    & p {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+}
+.tp-team-dtls-item {
+    @media #{$xl,$lg,$md,$xs} {
+        margin-left: 0;
+    }
+    &__title {
+        font-size: 24px;
+    }
+    & p {
+        margin-bottom: 40px;
+        @media #{$lg} {
+            font-size:14px;
+        }
+        & br {
+            @media #{$lg} {
+                display: none;
+            }
+        }
+    }
+    &__list {
+        & ul {
+            & li {
+                font-weight: 500;
+                margin-bottom: 5px;
+                & i {
+                    color: var(--tp-theme-blue);
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+}

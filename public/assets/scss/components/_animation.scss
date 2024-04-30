@@ -1,0 +1,95 @@
+/* 01. ========= video ripple animation ========== */
+@keyframes tp-pulse {
+0% {
+	box-shadow: 0 0 0 0 rgb(16, 208, 161, 0.4);
+}
+70% {
+	box-shadow: 0 0 0 45px rgb(16, 208, 161, 0);
+}
+100% {
+	box-shadow: 0 0 0 0 rgb(16, 208, 161, 0);
+	}
+}
+
+
+/* 02. ========= video ripple animation ========== */
+@keyframes tp-pulse-2 {
+0% {
+	box-shadow: 0 0 0 0 rgb(255, 255, 255, .4);
+}
+70% {
+	box-shadow: 0 0 0 45px rgb(255, 255, 255, 0);
+}
+100% {
+	box-shadow: 0 0 0 0 rgb(255, 255, 255, 0);
+	}
+}
+
+
+/* 03. ========= ripple animation ========== */
+@keyframes popupBtn {
+	0% {
+	  transform: scale(1);
+	  opacity: 0.6;
+	}
+	50% {
+	  transform: scale(1.6);
+	  opacity: 0.3;
+	}
+	100% {
+	  transform: scale(2.2);
+	  opacity: 0;
+	}
+}
+
+/* 04. ========= btn-arrow-animation ========== */
+@keyframes tfLeftToRight {
+    49% {
+        transform: translateX(30%);
+    }
+    50% {
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+    51% {
+        opacity: 1;
+    }
+}
+
+
+/* 05. ========= firefly ========== */
+@keyframes firefly {
+	0% {
+	 opacity: 1.0;
+	}
+	50% {
+	 opacity: 0.0;
+	}
+	100% {
+	 opacity: 1.0;
+	 color: white; 
+	}
+}
+
+
+/* 06. ========= ripple animation ========== */
+.tp-ripple-white {
+    border-radius: 50%;
+    animation: ripple-white 2s linear infinite;
+}
+@-webkit-keyframes tp-ripple-white {
+    0% {
+        box-shadow:  0 0 0 10px rgba(255,255,255,0.5), 0 0 0 20px rgba(255,255,255,0.5);
+    }
+    100% {
+        box-shadow:  0 0 0 20px rgba(255,255,255,0.5), 0 0 0 30px rgba(255,255,255,0);
+    }
+}
+@keyframes tp-ripple-white {
+    0% {
+        box-shadow:  0 0 0 10px rgba(255,255,255,0.5), 0 0 0 20px rgba(255,255,255,0.5);
+    }
+    100% {
+        box-shadow:  0 0 0 20px rgba(255,255,255,0.5), 0 0 0 30px rgba(255,255,255,0);
+    }
+}

@@ -1,0 +1,72 @@
+@use '../utils' as *;
+
+.breadcrumb {
+    &__area {
+        padding: 200px 0;
+    }
+    &__overlay {
+        position: relative;
+        z-index: 1;
+        margin-top: -2px;
+        &::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgb(23, 17, 81, .7);
+            z-index: -1;
+        }
+    }
+}
+.tp-breadcrumb {
+    &__title {
+        color: var(--tp-common-white);
+        font-weight: 400;
+        font-size: 55px;
+        text-transform: uppercase;
+        line-height: 1.2;
+        margin-bottom: 0;
+        @media #{$lg} {
+            font-size: 46px;
+        }
+        @media #{$md} {
+            font-size: 44px;
+        }
+        @media #{$xs} {
+            font-size: 36px;
+        }
+    }
+    &__link {
+        justify-content: end;
+        @media #{$xs} {
+            justify-content: start;
+        }
+        & span {
+            color: var(--tp-common-white);
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 1.8px;
+            @media #{$lg} {
+                font-size: 16px;
+            }
+            & a {
+                text-decoration: underline;
+                margin-left: 5px;
+                &:hover  {
+                    color: var(--tp-icon-green);
+                }
+            }
+            @media #{$md,$xs} {
+                font-size: 16px;
+            }
+        }
+    }
+}
+.serv-md {
+    @media #{$md} {
+        justify-content: start;
+    }
+}

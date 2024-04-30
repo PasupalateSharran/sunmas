@@ -1,0 +1,155 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  17. PRICING CSS START
+/*----------------------------------------*/
+
+.tp-price {
+    padding: 35px 42px 45px 55px;
+    border: 1px solid var(--tp-border-primary);
+    @include transition(.3s);
+    border-top: 4px solid var(--tp-theme-blue);
+    @media #{$lg,$xs} {
+        padding: 35px 20px 45px 20px;
+    }
+    &:hover {
+        border-top: 4px solid var(--tp-theme-blue);
+    }
+    &__badge {
+        & span {
+            color: var(--tp-text-2);
+            font-weight: 600;
+            letter-spacing: 2px;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+    }
+    &__content {
+        & p {
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+    &__value {
+        font-size: 45px; 
+        & span {
+            color: var(--tp-text-2);
+            font-size: 14px;
+            font-weight: 400;
+            display: inline-block;
+        }                                                                                
+    }
+    &__features {
+        & ul {
+            & li {
+                position: relative;
+                padding-left: 14px;
+                color: var(--tp-text-2);
+                font-size: 16px;
+                margin-bottom: 15px;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    height: 4px;
+                    width: 4px;
+                    background: var(--tp-text-2);
+                    border-radius: 50%;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+    &__inactive {
+        color: var(--tp-text-2);
+        opacity: .3;
+    }
+    &__btn {
+        & a {
+            background: var(--tp-theme-blue);
+            padding: 14px 87px;
+            display: inline-block;
+            font-size: 12px;
+            color: var(--tp-common-white);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            @media #{$xl} {
+                padding: 14px 50px;
+            }
+            @media #{$lg,$md} {
+                padding: 14px 40px;
+            }
+            @media #{$xs} {
+                padding: 12px 15px;
+            }
+            & span {
+                margin-left: 10px;
+                display: inline-block;
+            }
+        }
+        &:hover {
+            & a {
+                & span {
+                    animation: tfLeftToRight 0.5s forwards;
+                }
+            }
+        }
+    }
+}
+.tp-price.active {
+    box-shadow: 0px 26px 33px rgba(77, 97, 130, 0.05);
+    border: none;
+    border-top: 4px solid var(--tp-theme-pink);
+    &:hover {
+        border-top: 4px solid var(--tp-theme-pink);
+    }
+}
+.tp-pink-btn {
+    & a {
+        background-color: var(--tp-theme-pink);
+    }
+}
+.tp-yearly-price {
+    border-top: 4px solid var(--tp-theme-secondary);
+    &:hover {
+        border-top: 4px solid var(--tp-theme-secondary);
+    }
+}
+.tp-green-btn {
+    & a {
+        background-color: var(--tp-theme-secondary);
+    }
+}
+.tp-white-price {
+    background-color: #1C155E;
+    border: none;
+    border-top: 4px solid var(--tp-theme-blue);
+    & .tp-price__value {
+        color: var(--tp-common-white);
+    }
+    & .tp-price__heading {
+        & p {
+            color: var(--tp-common-white);
+        }
+    }
+    & .tp-price__features {
+        & ul {
+            & li {
+                color: var(--tp-text-1);
+            }
+        }
+    }
+    & .tp-price__inactive {
+        color: var(--tp-text-1);
+        opacity: .3;
+    }
+}
+.tp-white-price.active {
+    border-top: 4px solid var(--tp-theme-pink);
+    background-color: #292176;
+}
+.tp-white-price.tp-yearly-price{
+    border-top: 4px solid  var(--tp-theme-secondary);
+}

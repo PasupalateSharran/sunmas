@@ -1,0 +1,140 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  21. PORTFOLIO CSS START
+/*----------------------------------------*/
+
+.tpoverview {
+    & p {
+        font-weight: 500;
+        font-size: 18px;
+        margin-bottom: 15px;
+        @media #{$md} {
+            font-size: 16px;
+        }
+        @media #{$xs} {
+            font-size: 14px;
+        }
+        & span {
+            display: inline-block;
+            font-weight: 400;
+            color: #7A8085;
+            margin-left: 5px;
+        }
+    }
+    &__social {
+        & a {
+            font-size: 15px;
+            color: var(--tp-icon-fb);
+            height: 45px;
+            width: 45px;
+            line-height: 45px;
+            text-align: center;
+            border: 1px solid  var(--tp-border-primary);
+            display: inline-block;
+            border-radius: 50%;
+            margin-right: 12px;
+            &:hover {
+                background-color: var(--tp-icon-fb);
+                color: var(--tp-common-white);
+                border: 1px solid  var(--tp-icon-fb);
+            }
+        }
+        & .tpover-social-prn {
+            color: #E40028;
+            &:hover {
+                background-color: #E40028;
+                border: 1px solid #E40028;
+            }
+        }
+        & .tpover-social-tweet {
+            color: var(--tp-icon-tweet);
+            &:hover {
+                background-color: var(--tp-icon-tweet);
+                border: 1px solid var(--tp-icon-tweet);
+            }
+        }
+        & .tpover-social-tube {
+            color: var(--tp-icon-red);
+            &:hover {
+                background-color:var(--tp-icon-red);
+                border: 1px solid var(--tp-icon-red);
+            }
+        }
+    }
+}
+.tpproject-title {
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 42px;
+    @media #{$lg} {
+        font-size: 34px;
+    }
+    @media #{$md} {
+        font-size: 26px;
+    }
+    @media #{$xs} {
+        font-size: 24px;
+    }
+}
+.tpviewtext {
+    & p {
+        font-size: 18px;
+        line-height: 30px;
+        @media #{$lg,$md,$xs} {
+            font-size: 16px;
+        }
+    }
+    &__para {
+        margin-bottom: 60px;
+    }
+}
+.tpprothumb {
+    & img {
+        border-radius: 10px;
+        @media #{$md,$xs} {
+            max-width: 100%;
+        }
+    }
+}
+.tpprosolution {
+    & p {
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 55px;
+        @media #{$lg,$md,$xs} {
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+    }
+}
+.tpprovideo {
+    & img {
+        @media #{$md,$xs} {
+            max-width: 100%;
+        }
+    }
+    & .play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 120px;
+        width: 120px;
+        background: var(--tp-common-white);
+        text-align: center;
+        line-height: 120px;
+        border-radius: 50%;
+        color: var(--tp-theme-primary);
+        animation: tp-pulse-2 1.5s infinite;
+        @media #{$md,$xs} {
+            height: 90px;
+            width: 90px;
+            line-height: 90px;
+        }
+        &:hover {
+            background-color: var(--tp-theme-secondary);
+            color: var(--tp-common-white);
+        }
+    }
+}

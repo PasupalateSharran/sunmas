@@ -1,0 +1,75 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  18. FAQ CSS START
+/*----------------------------------------*/
+
+
+.faq-accordion {
+    margin: 0 15px;
+    @media #{$xs} {
+        margin: 0 0;
+    }
+    & .accordion-button{
+        color: var(--tp-theme-primary);
+        background: none;
+        position: relative;
+        padding: 30px 75px 30px 45px;
+        font-size: 24px;
+        font-weight: 500;
+        box-shadow: none;
+        line-height: 1.8;
+        @media #{$md} {
+            font-size: 18px;
+        }
+        @media #{$xs} {
+            padding: 20px 30px 20px 25px;
+            font-size: 16px;
+        }
+        &::after {
+            position: absolute;
+            font-family: "Font Awesome 5 pro";
+            top: 50%;
+            right: 45px;
+            transform: translateY(-50%);
+            content: "\f062";
+            background: none;
+            color: var(--tp-theme-blue);
+            @media #{$xs} {
+                right: 15px;
+            }
+        }
+        &.collapsed {
+            &::after {
+                @include transition(.3s);
+                content: "\f063";
+                color: var(--tp-theme-primary);
+            }
+        }
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    & .accordion-items {
+        border: 1px solid var(--tp-grey-1);
+        box-shadow: 0px 20px 20px rgba(228, 228, 228, 0.25);
+        margin-bottom: 30px;
+    }
+    & .accordion-content {
+        border-bottom: 4px solid var(--tp-theme-blue);
+        & p {
+            padding: 0 75px 35px 45px;
+            color: var(--tp-text-2);
+            margin: 0;
+            @media #{$xs} {
+                padding: 0 30px 35px 25px;
+                font-size: 14px;
+            }
+            & br {
+                @media #{$lg,$md,$xs} {
+                    display: none;                    
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,118 @@
+@use '../utils' as *;
+
+.tp-section {
+    &__sub-title {
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--tp-icon-blue);
+        display: inline-block;
+    }
+    &__title {
+        font-size: 43px;
+		@media #{$xl} {
+			font-size: 40px;
+		}
+		@media #{$xs} {
+			font-size: 32px;
+		}
+    }
+	& i {
+		font-size: 18px;
+		font-weight: 500;
+		font-style: normal;
+		margin-bottom: 35px;
+		display: block;
+	}
+	&__link {
+		font-size: 18px;
+		font-weight: 500;
+		margin-bottom: 25px;
+		display: inline-block;
+		& > i {
+			display: inline-block;
+			margin-bottom: 0;
+		}
+		&:hover {
+			color: var(--tp-icon-green);
+			& i {
+				animation: tfLeftToRight 0.5s forwards;
+			}
+		}
+	}
+	& p {
+		font-size: 15px;
+		display: block;
+		padding-right: 55px;
+		@media #{$xxl} {
+			padding: 10px;
+		}
+		@media #{$xl,$md} {
+			padding: 0px;
+		}
+		@media #{$lg} {
+			padding: 0px;
+			font-size: 14px;
+			margin-bottom: 20px;
+		}
+		@media #{$xs} {
+			padding: 0px;
+			font-size: 14px;
+			margin-right: 0;
+		}
+	}
+}
+.sub-title-white {
+	color: var(--tp-common-white);
+}
+.title-white {
+	color: var(--tp-common-white);
+}
+.left-line{
+	position: relative;
+	&::before{
+		content: "";
+		width: 35px;
+		height: 2px;
+		background-color: var(--tp-icon-blue);
+		display: inline-block;
+		margin-right: 10px;
+	}	
+}
+.left-line-white{
+	position: relative;
+	&::before{
+		content: "";
+		width: 35px;
+		height: 2px;
+		background-color: var(--tp-common-white);
+		display: inline-block;
+		margin-right: 10px;
+	}	
+}
+.right-line {
+    position: relative;
+    &::after{
+		content: "";
+		width: 35px;
+		height: 2px;
+		background-color: var(--tp-icon-blue);
+		display: inline-block;
+		margin-left: 10px;
+	}
+}
+.right-line-white {
+    position: relative;
+    &::after{
+		content: "";
+		width: 35px;
+		height: 2px;
+		background-color: var(--tp-common-white);
+		display: inline-block;
+		margin-left: 10px;
+	}
+}
+.tp-section-center {
+	@media #{$md} {
+		text-align: center !important;
+	}
+}

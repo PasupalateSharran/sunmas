@@ -1,0 +1,392 @@
+@use '../utils' as *;
+
+/*-----------------------------------------------------------------------------------
+
+    Theme Name: Bioxlab - Laboratory & Science Research
+    Author: Theme Pure
+    Support: basictheme@gmail.com
+    Description: Template Name  – HTML5 Template
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+/************ TABLE OF CONTENTS ***************
+
+    01. THEME DEFAULT CSS
+    02. HEADER CSS
+    03. MEAN MENU CSS
+    04. BANNER CSS START
+    05. SLIDER CSS START
+    06. SERVICES CSS START
+    07. ABOUT CSS START
+    08. COUNTER CSS START
+    09. GALLERY CSS START
+    10. CHOOSE CSS START
+    11. APPOINMENT CSS START
+    12. TEAM CSS START
+    13. TESTIMONIAL CSS START
+    14. CTA CSS START
+    15. BLOG CSS START
+    16. RESEARCH CSS START
+    17. PRICING CSS START
+    18. FAQ CSS START
+    19. SHOP CSS START
+    20. CART CSS START
+    21. PORTFOLIO CSS START
+    22. FOOTER CSS START
+
+
+**********************************************/
+
+
+
+
+/*----------------------------------------*/
+/*  01. THEME DEFAULT CSS START
+/*----------------------------------------*/
+
+@import url($font-url);
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*---------------------------------
+	typography css start 
+---------------------------------*/
+body {
+	font-family: var(--tp-ff-body);
+	font-size: 15px;
+	font-weight: 400;
+	color: var(--tp-text-body);
+	line-height: 26px;
+	overflow-X: hidden !important;
+}
+
+a{
+	text-decoration: none;
+	@include transition (.3s);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--tp-ff-heading);
+	color: var(--tp-header-1);
+	margin-top: 0px;
+	font-weight: var(--tp-fw-sbold);
+	line-height: 1.2;
+	@include transition(.3s);
+}
+
+h1 {
+	font-size: 40px;
+}
+  
+h2 {
+font-size: 32px;
+}
+
+h3 {
+font-size: 28px;
+}
+
+h4 {
+font-size: 24px;
+}
+
+h5 {
+font-size: 20px;
+}
+
+h6 {
+font-size: 16px;
+}
+
+ul,
+li {
+	list-style: none;
+}
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+p {
+	font-family: var(--tp-ff-p);
+	font-size: 15px;
+	font-weight: 400;
+	color: var(--tp-text-body);
+	margin-bottom: 15px;
+	line-height: 26px;
+}
+
+
+a,
+.btn,
+button,
+span,
+p,
+i,
+input,
+select,
+textarea,
+li,
+img,
+svg path,
+*::after,
+*::before,
+.transition-3,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@include transition(.3s);
+}
+
+a:focus,
+.button:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+a:focus,
+a:hover{
+	color: inherit;
+	text-decoration: none;
+}
+
+a,
+button {
+	color: inherit;
+	outline: none;
+	border: none;
+	background: transparent;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+button:focus{
+    outline: 0; 
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+
+input{
+	outline: none;
+}
+
+input[type="color"] {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	border-radius: 50%;
+}
+
+*::-moz-selection {
+	background: var(--tp-common-black);
+	color: var(--tp-common-white);
+	text-shadow: none;
+}
+::-moz-selection {
+	background: var(--tp-common-black);
+	color: var(--tp-common-white);
+	text-shadow: none;
+}
+::selection {
+	background: var(--tp-common-black);
+	color: var(--tp-common-white);
+	text-shadow: none;
+}
+
+
+*::-moz-placeholder {
+	color: var(--tp-common-black);
+	font-size: var(--tp-fz-body);
+	opacity: 1;
+}
+*::placeholder {
+	color: var(--tp-common-black);
+	font-size: var(--tp-fz-body);
+	opacity: 1;
+}
+
+/*---------------------------------
+    common classes css start 
+---------------------------------*/
+
+.w-img{
+	& img{
+		width: 100%;
+	}
+}
+
+.m-img{
+	& img{
+		max-width: 100%;
+	}
+}
+
+.fix {
+    overflow:hidden
+}
+.clear{
+    clear: both;
+}
+
+
+.z-index-1{
+	z-index: 1;
+}
+
+.z-index-11{
+	z-index: 11;
+}
+
+.overflow-y-visible{
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+
+.p-relative{
+	position: relative;
+}
+.p-absolute{
+	position: absolute;
+}
+
+.include-bg{
+	@include background();
+}
+
+.f-left {
+	float: left;
+}
+
+.f-right {
+	float: right;
+}
+
+// pagination
+.basic-pagination{
+	& ul{
+		& li{
+			display: inline-block;
+			&:not(:last-child){
+				margin-right: 6px;
+			}
+			& a,
+			& span{
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				@include border-radius(7px);
+				border: 1px solid var(--tp-grey-1);
+				font-size: 14px;
+				font-weight: 500;
+				color: var(--tp-text-2);
+				@media #{$xs} {
+					width: 40px;
+					height: 40px;
+					line-height: 40px;
+				}
+				&:hover,
+				&.current{
+					background: var(--tp-theme-primary);
+					border-color: var(--tp-theme-primary);
+					color: var(--tp-common-white);
+				}
+			}
+		}
+	}
+}
+
+
+/* scrollUp */
+.scroll-top {
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	position: fixed;
+	bottom: -10%;
+	right: 50px;
+	font-size: 16px;
+	border-radius: 6px;
+	z-index: 99;
+	color: var(--tp-common-white);
+	text-align: center;
+	cursor: pointer;
+	background: var(--tp-theme-secondary);
+	transition: 1s ease;
+	border: none;
+	@media #{$xs} {
+		right: 30px;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+	}
+}
+.scroll-top.open {
+	bottom: 30px;
+}
+.scroll-top::after {
+	position: absolute;
+	z-index: -1;
+	content: '';
+	top: 100%;
+	left: 5%;
+	height: 10px;
+	width: 90%;
+	opacity: 1;
+	background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 80%);
+}
+.scroll-top:hover {
+	background: var(--tp-theme-pink);
+}
+
+/* Preloader */
+#preloadertp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 999999;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+	color: var(--tp-theme-secondary);
+}
+#preloadertp {
+	& img {
+		// width: 12%;
+		width: 70px;
+		animation: preloader 3s linear infinite;
+	}
+}
