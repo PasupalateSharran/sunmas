@@ -204,63 +204,27 @@
     <main>
         <div class="home-area">
             <h2>Home Page</h2>
-            <!-- Slider Editor Area   -->
-            <section class="appoinment-area grey-bg mb-50 tp-box-space ml-30 mr-30"
-            data-background="assets/img/shape/shape-bg-08.png">
-            <div class="container">
-                <h3>Slider Area</h3>
-                <div class="row align-items-end mb-80">
-                    <div class="col-xl-4 col-lg-12 col-md-12">
-                    </div>
-                    <div class="col-xl-8 col-lg-12 col-md-12">
-                        <div class="visitor-info visitor-info-bg">
-                            <h4 class="appoinment-title mb-25"><i class="fa-light fa-file-signature"></i>Edit Slide
-                                1</h4>
-                                <div class="visitor-form">
-                                    <form action="/admin/updateSlide/1" method="POST">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="visitor-form__input">
-                                                    <input type="text" name="heading" placeholder="Heading"
-                                                    value="<%= sliderData.slide1.title %>">
-                                                    
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="visitor-form__input">
-                                                    <textarea placeholder="Body"
-                                                    name="body"><%= sliderData.slide1.content %></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="visitor-form__input">
-                                                    <button type="submit" class="tp-btn">Update</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row align-items-end">
-                        <div class="col-xl-4 col-lg-12 col-md-12">
-                        </div>
-                        <div class="col-xl-8 col-lg-12 col-md-12">
-                            <div class="visitor-info visitor-info-bg">
-                                <h4 class="appoinment-title mb-25"><i class="fa-light fa-file-signature"></i>Edit Slide
-                                    2</h4>
+            
+            <!-- Slider Editor Area -->
+            <section class="appoinment-area grey-bg mb-50 tp-box-space ml-30 mr-30" data-background="assets/img/shape/shape-bg-08.png">
+                <div class="container">
+                    <h3>Slider Area</h3>
+                    <div class="row align-items-end mb-80">
+                        <% Object.keys(sliderData).forEach((slideKey, index) => { %>
+                            <div class="col-xl-4 col-lg-12 col-md-12">
+                                <div class="visitor-info visitor-info-bg">
+                                    <h4 class="appoinment-title mb-25"><i class="fa-light fa-file-signature"></i>Edit Slide <%= index + 1 %></h4>
                                     <div class="visitor-form">
-                                        <form action="/admin/updateSlide/2" method="POST">
+                                        <form action="/admin/updateSlide/<%= index + 1 %>" method="POST">
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="visitor-form__input">
-                                                        <input type="text" name="heading" placeholder="Heading" value="<%= sliderData.slide2.title %>">
+                                                        <input type="text" name="heading" placeholder="Heading" value="<%= sliderData[slideKey].title %>">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="visitor-form__input">
-                                                        <textarea placeholder="Body" name="body"><%= sliderData.slide2.content %></textarea>
+                                                        <textarea placeholder="Body" name="body"><%= sliderData[slideKey].content %></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
@@ -273,13 +237,14 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <% }); %>
                     </div>
-                </section>
-                <!-- Slider Editor Area-End   -->
-                <!-- About Editor Area   -->
-                <section class="appoinment-area grey-bg mb-50 mt-100 tp-box-space ml-30 mr-30"
-                data-background="assets/img/shape/shape-bg-08.png">
+                </div>
+            </section>
+            <!-- Slider Editor Area End -->
+    
+            <!-- About Editor Area -->
+            <section class="appoinment-area grey-bg mb-50 mt-100 tp-box-space ml-30 mr-30" data-background="assets/img/shape/shape-bg-08.png">
                 <div class="container">
                     <h3>About Area</h3>
                     <div class="row align-items-end mb-80">
@@ -293,15 +258,12 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="visitor-form__input">
-                                                    <input type="text" name="heading" placeholder="Heading"
-                                                    value="<%= aboutData.title %>">
-                                                    
+                                                    <input type="text" name="heading" placeholder="Heading" value="<%= aboutData.title %>">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="visitor-form__input">
-                                                    <textarea placeholder="Body"
-                                                    name="body"><%= aboutData.content %></textarea>
+                                                    <textarea placeholder="Body" name="body"><%= aboutData.content %></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
@@ -317,9 +279,144 @@
                     </div>
                 </div>
             </section>
-            <!-- About Editor Area-End   -->
+            <!-- About Editor Area End -->
+    
+            <!-- Services Editor Area -->
+            <section class="appoinment-area grey-bg mb-50 mt-100 tp-box-space ml-30 mr-30" data-background="assets/img/shape/shape-bg-08.png">
+                <div class="container">
+                    <h3>Services Area</h3>
+                    <div class="row align-items-end mb-80">
+                        <% Object.keys(servicesData).forEach((serviceKey, index) => { %>
+                            <div class="col-xl-4 col-lg-12 col-md-12">
+                                <div class="visitor-info visitor-info-bg">
+                                    <h4 class="appoinment-title mb-25"><i class="fa-light fa-file-signature"></i>Edit Service <%= index + 1 %></h4>
+                                    <div class="visitor-form">
+                                        <form action="/admin/updateService/<%= index + 1 %>" method="POST">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="visitor-form__input">
+                                                        <input type="text" name="title" placeholder="Title" value="<%= servicesData[serviceKey].title %>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="visitor-form__input">
+                                                        <textarea placeholder="Content" name="content"><%= servicesData[serviceKey].content %></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="visitor-form__input">
+                                                        <button type="submit" class="tp-btn">Update</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </section>
+            <!-- Services Editor Area End -->
+    
+            <!-- Testimonial Editor Area -->
+            <section class="appoinment-area grey-bg mb-50 mt-100 tp-box-space ml-30 mr-30" data-background="assets/img/shape/shape-bg-08.png">
+                <div class="container">
+                    <h3>Testimonial Area</h3>
+                    <div class="row align-items-end mb-80">
+                        <% Object.keys(testimonialData).forEach((testimonialKey, index) => { %>
+                            <div class="col-xl-4 col-lg-12 col-md-12">
+                                <div class="visitor-info visitor-info-bg">
+                                    <h4 class="appoinment-title mb-25"><i class="fa-light fa-file-signature"></i>Edit Testimonial <%= index + 1 %></h4>
+                                    <div class="visitor-form">
+                                        <form action="/admin/updateTestimonial/<%= index + 1 %>" method="POST">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="visitor-form__input">
+                                                        <input type="text" name="name" placeholder="Name" value="<%= testimonialData[testimonialKey].name %>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="visitor-form__input">
+                                                        <input type="text" name="position" placeholder="Position" value="<%= testimonialData[testimonialKey].position %>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="visitor-form__input">
+                                                        <textarea placeholder="Review" name="review"><%= testimonialData[testimonialKey].review %></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="visitor-form__input">
+                                                        <button type="submit" class="tp-btn">Update</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonial Editor Area End -->
+    
+            <!-- Contact Editor Area -->
+            <section class="appoinment-area grey-bg mb-50 mt-100 tp-box-space ml-30 mr-30" data-background="assets/img/shape/shape-bg-08.png">
+                <div class="container">
+                    <h3>Contact Area</h3>
+                    <div class="row align-items-end mb-80">
+                        <div class="col-xl-4 col-lg-12 col-md-12">
+                        </div>
+                        <div class="col-xl-8 col-lg-12 col-md-12">
+                            <div class="visitor-info visitor-info-bg">
+                                <h4 class="appoinment-title mb-25"><i class="fa-light fa-file-signature"></i>Edit Contact Area</h4>
+                                <div class="visitor-form">
+                                    <form action="/admin/updateContact" method="POST">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="visitor-form__input">
+                                                    <input type="text" name="title" placeholder="Title" value="<%= contactData.title %>">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="visitor-form__input">
+                                                    <input type="text" name="number" placeholder="Number" value="<%= contactData.number %>">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="visitor-form__input">
+                                                    <input type="text" name="website" placeholder="Website" value="<%= contactData.website %>">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="visitor-form__input">
+                                                    <input type="text" name="timing" placeholder="Timing" value="<%= contactData.timing %>">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="visitor-form__input">
+                                                    <input type="text" name="days" placeholder="Days" value="<%= contactData.days %>">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="visitor-form__input">
+                                                    <button type="submit" class="tp-btn">Update</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact Editor Area End -->
         </div>
     </main>
+    
     <!-- main-area-end -->
 
     <footer>

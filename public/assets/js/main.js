@@ -33,36 +33,36 @@
 	});
 
 	// Auth HTTP Requet 
-	document.addEventListener('DOMContentLoaded', function () {
-		const loginForm = document.getElementById('loginForm');
-		const errorContainer = document.getElementById('errorContainer');
-
-		loginForm.addEventListener('submit', async function (event) {
-			event.preventDefault();
-
-			const username = document.getElementById('username').value;
-			const password = document.getElementById('password').value;
-
-			try {
-				const response = await fetch('/auth/admin', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify({ name: username, password: password })
-				});
-
-				if (!response.ok) {
-					throw new Error('Login failed');
-				}
-
-			} catch (error) {
-				errorContainer.textContent = 'Incorrect username or password';
-				errorContainer.style.display = 'block';
-			}
-		});
-	});
-
+	// document.addEventListener('DOMContentLoaded', function () {
+	// 	const loginForm = document.querySelector('.login'); // Change to target the form class
+	// 	const errorContainer = document.getElementById('errorContainer');
+	
+	// 	loginForm.addEventListener('submit', async function (event) {
+	// 		event.preventDefault();
+	
+	// 		const username = document.querySelector('.login__input[name="name"]').value; // Update to target the correct input fields
+	// 		const password = document.querySelector('.login__input[name="password"]').value; // Update to target the correct input fields
+	
+	// 		try {
+	// 			const response = await fetch('/auth/admin', {
+	// 				method: 'POST',
+	// 				headers: {
+	// 					'Content-Type': 'application/json'
+	// 				},
+	// 				body: JSON.stringify({ name: username, password: password })
+	// 			});
+	
+	// 			if (!response.ok) {
+	// 				throw new Error('Login failed');
+	// 			}
+	
+	// 		} catch (error) {
+	// 			errorContainer.textContent = `Incorrect username or password ${error}`;
+	// 			errorContainer.style.display = 'block';
+	// 		}
+	// 	});
+	// });
+	
 	///////////////////////////////////////////////////
 	// 01. PreLoader Js
 	windowOn.on('load', function () {

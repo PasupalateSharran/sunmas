@@ -3,12 +3,14 @@ const app = express()
 const bodyParser = require('body-parser');
 const flash = require('express-flash');
 const session = require('express-session');
+
 const path = require('path')
 const indexRoutes = require('./routes/index.js');
 const aboutRoutes = require('./routes/about.js');
 const adminRoutes = require('./routes/admin.js');
 const authRoutes = require('./routes/auth.js');
 const port = 3000
+
 
 // Server the static files 
 app.use(express.static('public'))

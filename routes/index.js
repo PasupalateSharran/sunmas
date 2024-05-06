@@ -4,9 +4,12 @@ const Data = require('../data')
 
 // Define routes
 router.get('/', (req, res) => {
-  const sliderData = Data.home.slider; // Extract slider data from your data object
-  const aboutData = Data.home.about; // Extract slider data from your data object
-  res.render('index', { sliderData,aboutData }); // Pass the slider data to your EJS template
+  const sliderData = Data.home.slider;
+  const aboutData = Data.home.about;
+  const servicesData = Data.home.services;
+  const testimonialData = Data.home.testimonial;
+  const contactData = Data.home.contactInfo;
+  res.render('index', { sliderData, aboutData, servicesData, testimonialData, contactData });
 });
 
 
