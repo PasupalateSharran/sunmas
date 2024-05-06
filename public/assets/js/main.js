@@ -13,13 +13,15 @@
 		// Function to open the login container
 		function openLogin() {
 			loginContainer.style.display = 'flex';
+			$(".tp-side-info-area").removeClass("tp-sidebar-opened");
+			$(".body-overlay").removeClass("opened");
 		}
 
 		// Function to close the login container
 		function closeLogin() {
 			loginContainer.style.display = 'none';
 		}
-
+		
 		// Event listener to open the login container when clicking on the external button
 		openLoginButton.addEventListener('click', openLogin);
 

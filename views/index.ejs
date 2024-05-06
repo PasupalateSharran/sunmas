@@ -84,7 +84,7 @@
                            <li><a href="research.html">Career</a></li>
 
                            <li><a href="contact.html">Contact</a></li>
-                           <li><a id="openLoginContainer" href="#">Admin</a></li>
+                           <li><a id="openLoginContainer" href="/admin">Admin</a></li>
                         </ul>
                      </nav>
                   </div>
@@ -381,54 +381,107 @@
       <!-- about-area-end -->
 
       <!-- services-area -->
-<section class="services-area pt-95 pb-90 grey-bg mt-60 fix" data-background="assets/img/shape/shape-bg-01.png">
-   <div class="container">
-       <div class="row mb-125">
-           <div class="col-lg-12">
-               <div class="search-form">
-                   <form action="#">
-                       <input type="text" placeholder="What are you looking for?">
-                       <button class="tp-btn search-btn" type="submit">Search Here <i class="fa-light fa-magnifying-glass ml-5"></i></button>
-                   </form>
+      <section class="services-area pt-95 pb-90 grey-bg mt-60 fix" data-background="assets/img/shape/shape-bg-01.png">
+         <div class="container">
+            <div class="row mb-125">
+               <div class="col-lg-12">
+                  <div class="search-form">
+                     <form action="#">
+                        <input type="text" placeholder="What are you looking for?">
+                        <button class="tp-btn search-btn" type="submit">Search Here <i class="fa-light fa-magnifying-glass ml-5"></i></button>
+                     </form>
+                  </div>
                </div>
-           </div>
-       </div>
-       <div class="row align-items-center">
-           <div class="col-lg-8 col-md-8 col-12">
-               <div class="tp-section">
-                   <span class="tp-section__sub-title left-line mb-20">our Services</span>
-                   <h3 class="tp-section__title mb-50">Service Area</h3>
+            </div>
+            <div class="row align-items-center">
+               <div class="col-lg-8 col-md-8 col-12">
+                  <div class="tp-section">
+                     <span class="tp-section__sub-title left-line mb-20">our Services</span>
+                     <h3 class="tp-section__title mb-50">Service Area</h3>
+                  </div>
                </div>
-           </div>
-           <div class="col-lg-4 col-md-4 col-12">
-               <div class="tp-services d-flex align-items-center">
-                   <div class="services-p"><i class="fa-regular fa-arrow-left"></i></div>
-                   <div class="services-n"><i class="fa-regular fa-arrow-right"></i></div>
+               <div class="col-lg-4 col-md-4 col-12">
+                  <div class="tp-services d-flex align-items-center">
+                     <div class="services-p"><i class="fa-regular fa-arrow-left"></i></div>
+                     <div class="services-n"><i class="fa-regular fa-arrow-right"></i></div>
+                  </div>
                </div>
-           </div>
-       </div>
-       <div class="services-slider  wow fadeInUp" data-wow-delay=".3s">
-           <div class="swiper-container service-active">
-               <div class="swiper-wrapper">
-                   <% servicesData.forEach(service => { %>
-                   <div class="swiper-slide">
-                       <div class="services-item mb-40">
+            </div>
+            <div class="services-slider  wow fadeInUp" data-wow-delay=".3s">
+               <div class="swiper-container service-active">
+                  <div class="swiper-wrapper">
+                     <div class="swiper-slide">
+                        <div class="services-item mb-40">
                            <div class="services-item__icon mb-30">
-                               <i class="<%= service.icon %>"></i>
+                              <i class="flaticon-hemoglobin-test-meter"></i>
                            </div>
                            <div class="services-item__content">
-                               <h4 class="services-item__tp-title mb-30"><a href="services-details.html"><%= service.title %></a></h4>
-                               <p><%= service.content %></p>
+                              <h4 class="services-item__tp-title mb-30"><a href="services-details.html"><%= servicesData[0].title %></a></h4>
+                              <p><%= servicesData[0].content %></p>
                            </div>
-                       </div>
-                   </div>
-                   <% }) %>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="services-item mb-40">
+                           <div class="services-item__icon pink-icon mb-30">
+                              <i class="flaticon-blood-test"></i>
+                           </div>
+                           <div class="services-item__content">
+                              <h4 class="services-item__tp-title mb-30"><a href="services-details.html"><%= servicesData[1].title %></a></h4>
+                              <p><%= servicesData[1].title %></p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="services-item mb-40">
+                           <div class="services-item__icon green-icon mb-30">
+                              <i class="flaticon-biochemistry"></i>
+                           </div>
+                           <div class="services-item__content">
+                              <h4 class="services-item__tp-title mb-30"><a href="services-details.html"><%= servicesData[2].title %></a></h4>
+                              <p><%= servicesData[2].content %></p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="services-item mb-40">
+                           <div class="services-item__icon sky-icon mb-30">
+                              <i class="flaticon-dna-1"></i>
+                           </div>
+                           <div class="services-item__content">
+                              <h4 class="services-item__tp-title mb-30"><a href="services-details.html"><%= servicesData[3].title %></a></h4>
+                              <p><%= servicesData[3].content %></p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="services-item mb-40">
+                           <div class="services-item__icon green-icon mb-30">
+                              <i class="flaticon-biochemistry"></i>
+                           </div>
+                           <div class="services-item__content">
+                              <h4 class="services-item__tp-title mb-30"><a href="services-details.html"><%= servicesData[4].title %></a></h4>
+                              <p><%= servicesData[4].content %></p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="services-item mb-40">
+                           <div class="services-item__icon green-icon mb-30">
+                              <i class="flaticon-biochemistry"></i>
+                           </div>
+                           <div class="services-item__content">
+                              <h4 class="services-item__tp-title mb-30"><a href="services-details.html"><%= servicesData[2].title %></a></h4>
+                              <p><%= servicesData[2].content %></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </div>
-           </div>
-       </div>
-   </div>
-</section>
-<!-- services-area-end -->
+            </div>
+         </div>
+      </section>
+      <!-- services-area-end -->      
 
 
       <!-- gallery-area -->
@@ -530,12 +583,9 @@
                            <img src="assets/img/icon/testi-ava-01.jpg" alt="testimonial-avata">
                         </div>
                         <div class="tp-testi__content text-center">
-                           <p>I would like to take this opportunity to provide feedback on my experience with your
-                              Engineering, Procurement, and Construction services. Overall, I am extremely satisfied
-                              with the quality of work and the level of professionalism demonstrated by your team
-                              throughout the project.</p>
-                           <h5 class="tp-testi__avata-title">Darlene Robertson</h5>
-                           <span class="tp-testi__ava-position">Secretary of (FlaxStudio)</span>
+                           <p><%= testimonialData[0].review %></p>
+                           <h5 class="tp-testi__avata-title"><%= testimonialData[0].name %></h5>
+                           <span class="tp-testi__ava-position"><%= testimonialData[0].position %></span>
                         </div>
                      </div>
                   </div>
@@ -545,12 +595,9 @@
                            <img src="assets/img/icon/testi-ava-02.jpg" alt="testimonial-avata">
                         </div>
                         <div class="tp-testi__content text-center">
-                           <p>I would like to express my gratitude for your commitment to sustainability. As someone who
-                              is passionate about Environmental Conservation, it was important for me to find a water
-                              solution that aligns with my values. I am thrilled to support a company that prioritizes
-                              sustainable practices and strives to make a positive impact on our planet.</p>
-                           <h5 class="tp-testi__avata-title">Courtney Henry</h5>
-                           <span class="tp-testi__ava-position">CEO of (FlaxStudio)</span>
+                           <p><%= testimonialData[1].review %></p>
+                           <h5 class="tp-testi__avata-title"><%= testimonialData[1].name %></h5>
+                           <span class="tp-testi__ava-position"><%= testimonialData[1].position %></span>
                         </div>
                      </div>
                   </div>
@@ -560,12 +607,9 @@
                            <img src="assets/img/icon/testi-ava-03.jpg" alt="testimonial-avata">
                         </div>
                         <div class="tp-testi__content text-center">
-                           <p>The procurement process was smooth and efficient. Your team was diligent in sourcing
-                              high-quality materials and equipment, ensuring that everything was delivered on time and
-                              within budget. The coordination and organization demonstrated during this phase greatly
-                              contributed to the overall success of the project.</p>
-                           <h5 class="tp-testi__avata-title">Kathryn Murphy</h5>
-                           <span class="tp-testi__ava-position">Manager of (FlaxStudio)</span>
+                           <p><%= testimonialData[2].review %></p>
+                           <h5 class="tp-testi__avata-title"><%= testimonialData[2].name %></h5>
+                           <span class="tp-testi__ava-position"><%= testimonialData[2].position %></span>
                         </div>
                      </div>
                   </div>
@@ -575,12 +619,9 @@
                            <img src="assets/img/icon/testi-ava-07.png" alt="testimonial-avata">
                         </div>
                         <div class="tp-testi__content text-center">
-                           <p>I am extremely satisfied with the engineering, procurement, and construction services
-                              provided by your company. Your team's professionalism, expertise, and commitment to
-                              delivering high-quality work are commendable. I would not Hesitate to Recommend your
-                              Services to others in need of Similar Expertise.</p>
-                           <h5 class="tp-testi__avata-title">Darlene Robertson</h5>
-                           <span class="tp-testi__ava-position">Programmer of (FlaxStudio)</span>
+                           <p><%= testimonialData[3].review %></p>
+                           <h5 class="tp-testi__avata-title"><%= testimonialData[3].name %></h5>
+                           <span class="tp-testi__ava-position"><%= testimonialData[3].position %></span>
                         </div>
                      </div>
                   </div>
@@ -923,11 +964,11 @@
                         <span class="tp-footer-widget__title mb-15">Contact Info</span>
                         <div class="tp-footer-widget__links mb-120">
                            <ul>
-                              <li>lorem Ipsum </li>
-                              <li><a href="tel:(+880)15569569365">+91 99887 76655</a></li>
-                              <li><a href="mailto:support@rstheme.com">info@sunmasgroups.com</a></li>
-                              <li>Office Hours: 8AM - 11PM</li>
-                              <li>Sunday - Wekend Day</li>
+                              <li><%= contactData.title %></li>
+                              <li><a href="tel:(+880)15569569365"><%= contactData.number %></a></li>
+                              <li><a href="mailto:support@rstheme.com"><%= contactData.website %></a></li>
+                              <li><%= contactData.timing %></li>
+                              <li><%= contactData.days %></li>
                            </ul>
                         </div>
                         <div class="tp-footer-widget__social fw-social">

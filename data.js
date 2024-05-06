@@ -55,7 +55,7 @@ const Data = {
             {
                 name: "Darlene Robertson",
                 position: "Programmer of (FlaxStudio)",
-                review: "I am extremely satisfied with the engineering, procurement, and construction services provided by your company. Your team's professionalism, expertise, and commitment to delivering high-quality work are commendable. I would not Hesitate to Recommend your Services to others in need of Similar Expertise."
+                review: "I am extremely satisfied with the engineering, procurement, and connpmstruction services provided by your company. Your team's professionalism, expertise, and commitment to delivering high-quality work are commendable. I would not Hesitate to Recommend your Services to others in need of Similar Expertise."
             }
         ],
         contactInfo: {
